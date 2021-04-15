@@ -1,0 +1,27 @@
+.navbar {
+    background-color: rgb(68, 68, 68);
+    overflow: auto;
+    margin: 10px;
+    padding-bottom: 20px;
+    padding-top: 2px;
+    border-radius: 8px;
+}
+
+.navbar li {
+    float: right;
+    list-style: none;
+    overflow: hidden;
+}
+
+.navbar li a {
+    padding: 10px;
+    text-decoration: none;
+    color: ivory;
+    font-family: monospace;
+    font-size: 18px;
+}
+
+.navbar li a:hover {
+    text-shadow: 1px 1px rgb(252, 255, 66);
+    background-color: rgb(114, 114, 114);
+}
