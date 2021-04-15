@@ -1,0 +1,55 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font: 400 15px/1.8 "Lato", sans-serif;
+    color: #777;
+}
+
+.bgimg-1 {
+    background-image: url(/background.jpg);
+    height: 100%;
+    position: relative;
+    opacity: 0.65;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 6px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.caption {
+    position: absolute;
+    left: 0;
+    top: 1%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.caption span.border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 50px;
+    letter-spacing: 10px;
+}
+
+#btn {
+    padding: 15px;
+    position: static;
+    margin-top: 500px;
+    color: black;
+    font-family: monospace;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#btn:hover {
+    background-color: rgb(37, 37, 37);
+    color: wheat;
+}
