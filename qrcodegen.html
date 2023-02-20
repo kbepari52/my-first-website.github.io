@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kazuhikoarase/qrcode-generator/js/qrcode.js"></script>
+    <script src="https://raw.githubusercontent.com/kbepari52/my-first-website.github.io/master/script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/kbepari52/my-first-website.github.io/master/style.css">
+
+</head>
+
+<body>
+    <main class="container">
+        <h1 class="mt-3 mb-5">QRcode generator</h1>
+        <div class="row">
+            <div class="col-9">
+                <nav>
+                    <div id="content-type" class="nav nav-tabs" role="tablist">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#nav-raw" type="button">Raw text</button>
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-vcard" type="button"> vCard</button>
+                        <button class="nav-link hide" data-bs-toggle="tab" data-bs-target="#nav-file">File</button>
+                    </div>
+                </nav>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="nav-raw">
+                        <label for="content-raw" class="form-label">Content of the QRCode</label>
+                        <textarea id="content-raw" class="form-control"></textarea>
+                    </div>
+                    <div class="tab-pane fade" id="nav-vcard">
+                        <div class="form-text mb-3">format vCard 4.0</div>
+
+                        <h3>Identity</h3>
+                        <div class="mb-3 row">
+                            <label for="content-gender" class="col-md-2 col-form-label">Gender</label>
+                            <div class="col-md-10">
+                                <div class="form-check form-check-inline">
+                                    <input name="content-gender" id="content-genderM" class="form-check-input" type="radio" value="M">
+                                    <label class="form-check-label" for="content-genderM">man</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input name="content-gender" id="content-genderF" class="form-check-input" type="radio" value="F">
+                                    <label class="form-check-label" for="content-genderF">female</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input name="content-gender" id="content-genderO" class="form-check-input" type="radio" value="O">
+                                    <label class="form-check-label" for="content-genderO">other</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input name="content-gender" id="content-genderN" class="form-check-input" type="radio" value="N">
+                                    <label class="form-check-label" for="content-genderN">no gender</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input name="content-gender" id="content-genderU" class="form-check-input" type="radio" value="U">
+                                    <label class="form-check-label" for="content-genderU">unknown</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content-title" class="col-md-2 col-form-label">Title(s)</label>
+                            <div class="col-md-10">
+                                <input id="content-title" type="text" class="form-control" placeholder="Dr, Me">
+                                <div class="form-text">use comma as separator</div>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content-firstname" class="col-md-2 col-form-label">Firstname</label>
+                            <div class="col-md-10">
+                                <input id="content-firstname" type="text" class="form-control" placeholder="John, Dimitry">
+                                <div class="form-text">required field, use comma as separator</div>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content-lastname" class="col-md-2 col-form-label">Lastname</label>
+                            <div class="col-md-10">
+                                <input id="content-lastname" type="text" class="form-control" placeholder="Doe">
+                                <div class="form-text">required field, use comma as separator</div>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content-suffix" class="col-md-2 col-form-label">Suffix(s)</label>
+                            <div class="col-md-10">
+                                <input id="content-suffix" type="text" class="form-control" placeholder="Jr, M.D.">
+                                <div class="form-text">use comma as separator</div>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content-nickname" class="col-md-2 col-form-label">Nickname(s)</label>
+                            <div class="col-md-10">
+                                <input id="content-nickname" type="text" class="form-control" placeholder="Hoover, Rocket">
+                                <div class="form-text">use comma as separator</div>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content-sound" class="col-md-2 col-form-label">Prononciation</label>
+                            <div class="col-md-10">
+                                <div class="input-group">
+                                    <select id="content-sound-type" class="form-control">
+                                    <option value="ogg" selected="selected">sound file</option>
+                                    <option value="base64">raw data</option>
+                                </select>
+                                    <input id="content-sound" type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content-birthday" class="col-md-2 col-form-label">Birthday</label>
+                            <div class="col-md-10">
+                                <input id="content-birthday" type="date" class="form-control">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content-anniversary" class="col-md-2 col-form-label">Anniversary</label>
+                            <div class="col-md-10">
+                                <input id="content-anniversary" type="date" class="form-control">
+                            </div>
+                        </div>
+
+                        <h3>Contact</h3>
+                        <div class="mb-3 row">
+                            <label for="content-tel-home" class="col-md-2 col-form-label">Telephone</label>
+                            <div class="col-md-3">
+                                <input id="content-tel-home" type="text" class="form-control" placeholder="home">
+                            </div>
+                            <div class="col-md-3">
+                                <input id="content-tel-cell" type="text" class="form-control" placeholder="cell">
+                            </div>
+                            <div class="col-md-3">
+                                <input id="content-tel-work" type="text" class="form-control" placeholder="work">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content-email" class="col-md-2 col-form-label">E-mail</label>
+                            <div class="col-md-10">
+                                <input id="content-email" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content-mail-post-office-box" class="col-md-2 col-form-label">Address</label>
+                            <div class="col-md-3">
+                                <input id="content-mail-post-office-box" type="number" class="form-control" min="1" step="1" placeholder="10">
+                            </div>
+                            <div class="col-md-7">
+                                <input id="content-mail-street" type="text" class="form-control" placeholder="avenue des Champs-Élysées">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content-mail-street-extended" class="col-md-2 col-form-label"></label>
+                            <div class="col-md-10">
+                                <input id="content-mail-street-extended" type="text" class="form-control" placeholder="Bât. D - Étage 4 - Appt. 43">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content-mail-locality" class="col-md-2 col-form-label">Town</label>
+                            <div class="col-md-7">
+                                <input id="content-mail-locality" type="text" class="form-control" placeholder="Paris">
+                            </div>
+                            <div class="col-md-3">
+                                <input id="content-mail-postal-code" type="number" class="form-control" min="1" step="1" placeholder="75008">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content-mail-region" class="col-md-2 col-form-label">Region</label>
+                            <div class="col-md-10">
+                                <input id="content-mail-region" type="text" class="form-control">
+                                <div class="form-text">state, province or region</div>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content-mail-country" class="col-md-2 col-form-label">Country</label>
+                            <div class="col-md-10">
+                                <input id="content-mail-country" type="text" class="form-control" placeholder="France">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content-url" class="col-md-2 col-form-label">Web site</label>
+                            <div class="col-md-10">
+                                <input id="content-url" type="text" class="form-control" placeholder="https://mysite.web">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content-impp" class="col-md-2 col-form-label">IMPP</label>
+                            <div class="col-md-10">
+                                <input id="content-impp" type="text" class="form-control" placeholder="aim:john.doe@aol.com">
+                                <div class="form-text">format <b>type</b>:<b>URI</b></div>
+                            </div>
+                        </div>
+
+                        <h3>Job</h3>
+                        <div class="mb-3 row">
+                            <label for="content-job-organization" class="col-md-2 col-form-label">Organization</label>
+                            <div class="col-md-10">
+                                <input id="content-job-organization" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content-job-role" class="col-md-2 col-form-label">Role</label>
+                            <div class="col-md-10">
+                                <input id="content-job-role" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content-job-title" class="col-md-2 col-form-label">Title</label>
+                            <div class="col-md-10">
+                                <input id="content-job-title" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-file">
+                        <div class="mb-3">
+                            <label for="content-file" class="form-label">File to add</label>
+                            <input id="content-file" class="form-control" type="file">
+                            <div class="form-text">Pay attention to the file size</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <aside class="col-3">
+                <label for="pixel_size" class="form-label">QRCode pixel size</label>
+                <div class="input-group mb-3">
+                    <input type="number" id="pixel_size" class="form-control" min="1" step="1" value="2" />
+                    <span class="input-group-text">px</span>
+                </div>
+
+                <label for="error_correction_level" class="form-label">Errors correction</label>
+                <div class="input-group mb-3">
+                    <select id="error_correction_level" class="form-control">
+                    <option value="L">L (7%)</option>
+                    <option value="M" selected="selected">M (15%)</option>
+                    <option value="Q">Q (25%)</option>
+                    <option value="H">H (30%)</option>
+                </select>
+                </div>
+
+                <label for="format" class="form-label">Format</label>
+                <div class="input-group mb-3">
+                    <select id="format" class="form-control">
+                    <option value="ascii">ASCII text</option>
+                    <option value="gif" selected="selected">gif image</option>
+                    <option value="svg">SVG image</option>
+                    <option value="table">php table</option>
+                </select>
+                </div>
+
+                <div class="row">
+                    <div class="col-8">
+                        <button id="submit" class="form-control btn-success">Create </button>
+                    </div>
+                    <div class="col-4">
+                        <button id="reset" class="form-control btn-outline-danger" title="Reset"><i class="bi bi-arrow-counterclockwise"></i></button>
+                    </div>
+                </div>
+
+                <div id="output" class="hide">
+                    <hr>
+                    <div id="output_qrcode" class="mb-3">
+                    </div>
+                    <aside>
+                        <button id="output_download" class="form-control btn-sm btn-outline-success">Download</button>
+                    </aside>
+                </div>
+            </aside>
+        </div>
+
+
+    </main>
+
+    <footer>
+        source <a href="https://github.com/kazuhikoarase/qrcode-generator">Kazuhiko Arase</a>, <a href="https://www.wikipedia.org/wiki/VCard">VCard def.</a> & <a href="https://www.evenx.com/vcard-3-0-format-specification">VCard spec.</a>
+    </footer>
+
+    <div id="modal_error" class="modal fade">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content alert-danger">
+                <div class="modal-header">
+                    <h5 class="modal-title">Error</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="modal_error_body" class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+</html>
