@@ -1,0 +1,10 @@
+p1 {
+    color: #4CAF50; /* Green text color */
+    font-family: 'Arial', sans-serif; /* Stylish font */
+    background-color: #f2f2f2; /* Light gray background */
+    padding: 10px; /* Padding for some breathing space */
+    border: 2px solid #3498db; /* Border with a nice blue color */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center the text */
+}
