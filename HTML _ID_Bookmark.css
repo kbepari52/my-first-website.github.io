@@ -1,0 +1,20 @@
+{
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        section {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Style the links to look like buttons for better user experience */
+        a.button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
